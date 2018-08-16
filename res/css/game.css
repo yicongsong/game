@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#start{
+    width:4.88rem;
+    height:1.76rem;
+    background:url(../../res/image/begin.png) 0 0 no-repeat;
+    background-size:100% 100%;
+    float:left;
+}
+.btns{
+    margin:0 1.76rem;position: absolute;bottom:0.68rem;
+    width:calc(100% - 3.52rem);
+}
+.card{
+    width:4.88rem;
+    height:1.76rem;
+    background:url(../../res/image/yishouji.png) 0 0 no-repeat;
+    background-size:100% 100%;
+    float:right;
+    margin-bottom:0.48rem;
+}
+.rule{
+    width:5.28rem;
+    height:0.6rem;
+    background:url(../../res/image/rule.png) 0 0 no-repeat;
+    background-size:100% 100%;
+    clear: both;
+    margin:0 auto;
+}
+.pop-con-3{
+    width:11.72rem;
+    height:17.88rem;
+    background:url("../../res/image/pop-con-3.png") 0 0 no-repeat;
+    background-size:100% 100%;
+}
+.rule-text{
+    font-size:0.48rem;
+    color: #fff;
+    width:10.4rem;
+    margin:0.48rem auto 0;
+}
+.rule-text>div{
+    position:relative;
+    line-height:0.76rem;
+    box-sizing:border-box;
+    padding-left:0.8rem;
+}
+.rule-text>div:not(:first-of-type){
+    margin-top:0.32rem;
+}
+.rule-text>div>span{
+    display: inline-block;
+    width:0.6rem;
+    height:0.6rem;
+    line-height:0.6rem;
+    text-align: center;
+    border-radius:50%;
+    background-color:#fff;
+    color:#69B2FF;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.rule-title{
+    width:4.72rem;
+    height:2.36rem;
+    margin:0.56rem auto 0;
+    background:url("../../res/image/pic-rule-title.png") 0 0 no-repeat;
+    background-size:100% 100%;
+}
+.geme-rule-title{
+    width:4.72rem;
+    height:2.36rem;
+    margin:0.56rem auto 0;
+    background:url("../../res/image/geme-rule-title.png") 0 0 no-repeat;
+    background-size:100% 100%;
+}
+.pop-con-4{
+    width:11.72rem;
+    height:9.08rem;
+    background:url("../../res/image/pop-con.png") 0 0 no-repeat;
+    background-size:100% 100%;
+}
+.pop-4-head{
+    width:9rem;
+    height:1.56rem;
+    line-height:1.56rem;
+    text-align: center;
+    border-bottom:1px solid #fff;
+    margin:0 auto;
+    font-size:0.72rem;
+    color:#fff;
+    font-weight:bold;
+}
+.pop-4-text{
+    font-size:0.6rem;
+    color:#fff;
+    text-align: center;
+    margin-top:0.8rem;
+}
+.pop-4-btn>div{
+    width:4.88rem;
+    height:1.76rem;
+    line-height:1.96rem;
+    text-align: center;
+    background:url("../../res/image/pic-btn.png") 0 0 no-repeat;
+    background-size:100% 100%;
+    font-size:0.72rem;
+    color: #fff;
+    font-weight:bold;
+    margin:0.72rem auto 0;
+}
+.pop-5-btn>div{
+    margin-top:0.52rem !important;
+}
+/*弹窗*/
+.mask{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:10;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.6);
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: space-around;
+    -webkit-justify-content: space-around;
+}

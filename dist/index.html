@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>canvas 游戏模板</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="res/css/flexible.css">
+    <link rel="stylesheet" href="res/css/game.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .pop-3,
+        .pop-4,
+        .pop-5 {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="position: relative">
+        <canvas id="game_canvas" width="375" height="667"></canvas>
+        <div class="btns">
+            <div id="start" class=""></div>
+            <div class="card"></div>
+            <div class="rule" onclick="showPop($('.pop-3'))"></div>
+        </div>
+        <!--游戏规则-->
+        <div class="pop-3">
+            <div class="mask">
+                <div class="pop-con-3">
+                    <div class="geme-rule-title"></div>
+                    <div class="rule-text">
+                        <div><span>1</span>活动时间：8月18日 00:00-24:00</div>
+                        <div><span>2</span>活动期间，上海联通橙市会员进入“惊喜工坊”活动页面，即可参与互动游戏，领取品牌折扣券。</div>
+                        <div><span>3</span>游戏规则：在20秒时间内点击传送带上的礼盒，部分礼盒内含有品牌折扣券，含有品牌折扣券的礼盒出现机率随机，每品牌折扣券仅能领取一次。每位用户有三次机会参与游戏。</div>
+                        <div><span>4</span>品牌折扣券内容：摩拜30天骑行券，猫眼10元无门槛抵用券，爱回收666元大礼包，途家520红包，网易严选全用户100-10组合红包，亚马逊专享商品10元无门槛抵扣券，马蜂窝满减券。</div>
+                        <div><span>5</span>领取成功后，品牌折扣券将自动保存至会员卡包，用户可通过会员卡包查看和使用。</div>
+                    </div>
+                    <div class="btn-close" onclick="hidePop($('.pop-3'))"></div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--游戏机会已用完-->
+        <div class="pop-4">
+            <div class="mask">
+                <div class="pop-con-4">
+                    <div class="pop-4-head">对不起！</div>
+                    <div class="pop-4-text">您的游戏机会已用完</div>
+                    <div class="pop-4-btn">
+                        <div>已收卡券</div>
+                        <div>邀请好友参与</div>
+                    </div>
+                    <div class="btn-close" onclick="hidePop($('.pop-4'))"></div>
+                </div>
+            </div>
+        </div>
+        <!--游戏结束-->
+        <div class="pop-5">
+            <div class="mask">
+                <div class="pop-con-4" style="height:9.44rem">
+                    <div class="pop-4-head">游戏结束</div>
+                    <div class="pop-4-btn pop-5-btn">
+                        <div>已收卡券</div>
+                        <div>再来一次</div>
+                        <div>邀请好友参与</div>
+                    </div>
+                    <div class="btn-close" onclick="hidePop($('.pop-5'))"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="game.min.js"></script>
+<script src="jquery-3.1.1.min.js"></script>
+<script>
+    /*弹窗showPop , hidePop*/
+    function showPop(obj) {
+        obj.show();
+        obj.bind("touchmove", function(e) {
+            e.preventDefault();
+        })
+
+        $('.mask').click(function() { //点击弹窗外空白区域隐藏
+            $(this).parent().hide();
+        })
+        $('.mask').children().click(function(e) { //阻止冒泡
+            e.stopPropagation();
+        })
+    }
+
+    function hidePop(obj) {
+        obj.hide();
+        obj.unbind('touchmove', function(e) {
+            e.preventDefault();
+        })
+    }
+</script>
+
+</html>
